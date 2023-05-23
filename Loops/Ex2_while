@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+//Escreva um programa que exiba os números pares de 1 a 20 usando um loop while
+
+int main(){
+    int i = 1;
+
+while(i<=20){
+    printf("\n%d", i);
+    i++;
+}
+}
