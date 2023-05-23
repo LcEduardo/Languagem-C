@@ -1,0 +1,12 @@
+#include <stdio.h>
+//Escreva um programa que exiba os números ímpares de 1 a 15 usando um loop do while.
+int main(){
+    int num;
+    
+    do{
+        if(num%2!=0){
+            printf("\n%d", num);
+        }
+        num = num +1;
+    }while(num <= 15);
+}
