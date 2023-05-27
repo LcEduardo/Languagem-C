@@ -1,0 +1,20 @@
+#include <stdio.h>
+//Escreva um programa que encontre a soma dos dígitos de um número usando um loop do while.
+
+int main(){
+    int number;
+    int digito;
+    int soma;
+
+    printf("Digite um numero inteiro: ");
+    scanf("%d", &number);
+
+    do{
+        digito = number % 10;
+        soma += digito;
+        number = number/10; 
+    }while(number!=0);
+    
+    printf("A soma dos digitos: %d", soma);
+}
+
