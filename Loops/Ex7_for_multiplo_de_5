@@ -1,0 +1,14 @@
+#include <stdio.h>
+//Escreva um programa de que exiba os múltiplos de 5 de 0 a 50 usando um loop for.
+
+int main(){
+    int number;
+
+    for(number = 0; number <= 50; number++){
+        if (number%5==0)
+        {
+            printf("\n%d", number);
+            number++;
+        }
+    }
+}
