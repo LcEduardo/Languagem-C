@@ -1,0 +1,19 @@
+#include <stdio.h>
+//Escreva um programa que verifique se um número é primo usando um loop while.
+
+int main(){
+	int num;
+	
+	while(num <= 100){
+	 num++;
+		if((num == 2)|| (num == 3) || (num == 5) || (num == 7)) {
+			printf("\nNUMERO PRIMO: %d", num);
+		}else if ((num % 2 == 0) || (num % 3 == 0) || (num % 5 == 0) || (num % 7 == 0)){
+			//printf("\nNAO E PRIMO");
+		}else if(num < 2){
+			//printf("\nNAO E PRIMO");
+		}else{
+			printf("\nNUMERO PRIMO: %d", num);
+		}
+	}
+}
