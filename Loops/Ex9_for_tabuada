@@ -1,0 +1,18 @@
+#include <stdio.h>
+//Escreva um programa que exiba a tabuada de multiplicação de um número usando um loop for.
+
+int main(){
+	int numero;
+	int mult;
+	int result;
+	
+	 printf("***TABUADA DE MULTIPLICACAO***");
+	 printf("\nDigite um numero:");
+	 scanf("\n%d", &numero);
+	 
+	 for(mult = 1; mult <= 10; mult++){
+	 	result = numero*mult;
+	 	 printf("\n%d", result);
+	 }
+	
+}
