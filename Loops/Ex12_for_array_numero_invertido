@@ -1,0 +1,17 @@
+#include <stdio.h>
+//Escreva um programa que solicite ao usuário um número e exiba o número invertido. Por exemplo, se o usuário digitar 12345, o programa deve exibir 54321.
+
+int main(){
+	int numero;
+	int digito [10];
+	int i;
+	
+	printf("Digite um numero para saber seu valor invertido: "),
+	scanf("%d", &numero);
+	
+	for(i = 0; numero != 0; i++){
+		digito [i]= numero % 10; //obtem o ultimo número
+		printf("\n%d", digito[i]); //armazena na variavel;
+		numero = numero/10; //elimina o ultimo número
+	}
+}
