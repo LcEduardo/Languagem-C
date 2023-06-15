@@ -1,0 +1,40 @@
+#include <stdio.h>
+//Escreva um programa que leia um número inteiro e verifique se ele é um número de Armstrong.
+    
+int main(){
+	int numero;
+	int numeroOriginal;
+	int quantidadeDeDigitos;
+	int armazenaOsDigitos[10];
+	int i;
+	int j;
+	int armazenaPotencias;
+    int somaDasPotencias = 0;
+	
+	printf("Digite um numero: ");
+	scanf("%d", &numero);
+
+	numeroOriginal = numero;
+
+    printf("\nDigite a quantidade de digitos presente no numero: ");
+	scanf("%d", &quantidadeDeDigitos);
+	
+	for(i = 0; i < quantidadeDeDigitos; i++){
+		armazenaOsDigitos [i] = numero % 10;
+		numero = numero / 10;		
+	}
+	
+	for(i = 0; i < quantidadeDeDigitos; i++){
+		armazenaPotencias = 1;
+		for( j = 0; j < quantidadeDeDigitos; j++) {
+            armazenaPotencias *= armazenaOsDigitos[i];
+		
+	    }
+	    somaDasPotencias += armazenaPotencias;
+    }
+	if(somaDasPotencias == numeroOriginal){
+		printf("\nESSE E UM NUMERO DE ARMSTRONG!");
+	}else{
+		printf("\nESSE NAO E UM NUMERO DE ARMSTRONG!");
+	}
+}
