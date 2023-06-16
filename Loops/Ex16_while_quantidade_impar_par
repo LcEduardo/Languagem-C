@@ -1,0 +1,24 @@
+#include <stdio.h>
+//Escreva um programa que leia um número inteiro e exiba a quantidade de dígitos pares e a quantidade de dígitos ímpares desse número.
+
+int main(){
+	int numeroInteiro;
+	int digitoSeparado;
+	int quantidadePar = 0;
+	int quantidadeImpar = 0;
+	
+	printf("Digite um numero inteiro: ");
+	scanf("%d", &numeroInteiro);
+	
+	while(numeroInteiro != 0){
+		digitoSeparado = numeroInteiro % 10;
+		if(digitoSeparado % 2 == 0){
+			quantidadePar = quantidadePar + 1; // OU quantidadePar++.
+		}else{
+			quantidadeImpar = quantidadeImpar +1;
+		}
+		numeroInteiro = numeroInteiro / 10;
+	}
+	printf("\nQuantidade de numeros pares: %d", quantidadePar);
+	printf("\nQuantidade de numeros impares: %d", quantidadeImpar);
+}
