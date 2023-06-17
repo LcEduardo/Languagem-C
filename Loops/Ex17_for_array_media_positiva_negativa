@@ -1,0 +1,40 @@
+#include <stdio.h>
+//Escreva um programa que leia uma sequência de números inteiros do usuário e exiba a média dos números positivos e a média dos números negativos separadamente.
+
+int main(){
+	int numerosInteiros[30];
+	int quantidadeDeNumeros;
+	float somaDaMediaPositiva = 0;
+	float somaDaMediaNegativa = 0;
+	float mediaDosPositivos;
+	float mediaDosNegativos;
+	int quantidadeDeNumerosPositivos = 0;
+	int quantidadeDeNumerosNegativos = 0;
+	int i;
+	int j;
+	
+	printf("***CALCULAR MEDIAS DE NUMEROS POSITIVOS E NEGATIVOS***");
+	printf("\nDigite a quantidade de numeros: ");
+	scanf("%d", &quantidadeDeNumeros);
+	
+	for(i = 0; i < quantidadeDeNumeros; i++){
+		printf("\nDigite um numeros%d: ", i);
+		scanf("%d", &numerosInteiros[i]);
+	}
+	
+	for(j=0; j < quantidadeDeNumeros; j++){
+		if(numerosInteiros[j] > 0){
+			somaDaMediaPositiva += numerosInteiros[j];
+			quantidadeDeNumerosPositivos++;
+		}else{
+			somaDaMediaNegativa += numerosInteiros[j];
+			quantidadeDeNumerosNegativos++ ;
+		}
+	}
+	    mediaDosPositivos = somaDaMediaPositiva / quantidadeDeNumerosPositivos;
+	    mediaDosNegativos = somaDaMediaNegativa / quantidadeDeNumerosNegativos;
+	
+		printf("\nMedia dos numeros Positivos: %.2f", mediaDosPositivos);
+		printf("\nMedia dos numeros Negativos: %.2f", mediaDosNegativos);
+        
+}
