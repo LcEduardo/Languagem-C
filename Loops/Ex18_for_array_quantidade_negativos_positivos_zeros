@@ -1,0 +1,45 @@
+#include <stdio.h>
+//Escreva um programa que leia uma sequência de números inteiros do usuário e exiba a quantidade de números positivos, a quantidade de números negativos e a quantidade de zeros da sequência.
+
+int main(){
+	int numerosDaSequencia[30];
+	int quantidadeDeNumeros;
+	int i;
+	
+	printf("Digite a quantidade de numeros que voce vai precisar: ");
+	scanf("%d", &quantidadeDeNumeros);
+	
+	if (quantidadeDeNumeros > 30) {
+        printf("Quantidade de numeros excede o limite. O maximo e 30.\n");
+        return 1; 
+    }
+	
+	for(i = 0; i < quantidadeDeNumeros; i++){
+		printf("\nDigite um numero positivo ou negativo: ");
+		scanf("%d", &numerosDaSequencia[i]);
+	}
+	
+	int j;
+	int numerosPositivos = 0;
+	int numerosNegativos = 0;
+	
+	for(j=0; j < quantidadeDeNumeros; j++){
+		if(numerosDaSequencia[j] >= 0){
+			numerosPositivos++;
+		}else{
+			numerosNegativos++;
+		}
+	}
+	
+	int t;
+	int quantidadeDeZeros = 0;
+	for(t = 0; t < quantidadeDeNumeros; t++){
+		if(numerosDaSequencia[t] % 10 == 0){
+			quantidadeDeZeros++;
+		}
+	}
+	
+	printf("\nSua sequencia possui %d numeros positivos.", numerosPositivos);
+	printf("\nSua sequencia possui %d numeros negativos.", numerosNegativos);
+	printf("\nSua sequencia possui %d numeros de zeros.", quantidadeDeZeros);
+}
