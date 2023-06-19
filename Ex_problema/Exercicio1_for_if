@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main(){
+	int numeroDigitado;
+	int i;
+	int quantidadeDeNumerosImpares = 0;
+	int quantidadeDeNumerosPares = 0;
+	int somaDosPares = 0;
+	
+	printf("Digite um numero: ");
+	scanf("%d", &numeroDigitado);
+	if(numeroDigitado >= 1){
+	
+	
+	for(i = numeroDigitado; i >= 1; i--){
+		if(i % 2 == 0){
+			quantidadeDeNumerosPares++;
+			somaDosPares += i;
+		}else{
+			quantidadeDeNumerosImpares++;
+		}
+	}
+	
+	printf("\nQuantidade de numeros impares: %d", quantidadeDeNumerosImpares);
+	printf("\nQuantidade de numeros pares: %d", quantidadeDeNumerosPares);
+	printf("\nA soma dos numeros paresde um 1 ate %d = %d", numeroDigitado, somaDosPares);
+	
+	if((numeroDigitado == 2)|| (numeroDigitado == 3) || (numeroDigitado == 5) || (numeroDigitado == 7)) {
+		printf("\nE um numero PRIMO!: %d", numeroDigitado);
+		}else if ((numeroDigitado % 2 == 0) || (numeroDigitado % 3 == 0) || (numeroDigitado % 5 == 0) || (numeroDigitado % 7 == 0)){
+		printf("\nNao e um numero PRIMO!");
+		}else if(numeroDigitado< 2){
+		printf("\nNao e um numero PRIMO!");
+		}else{
+		printf("\nNUMERO PRIMO: %d",numeroDigitado );
+		}
+		
+ }else{
+ 	printf("\nNao utileze numeros menores do que 1.");
+ }
+ 
+}
