@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    float notasDasMaterias[5];
+    int quantidadeDeMaterias = 5;
+    float somaDasNotas = 0;
+    float mediaDasNotas;
+    int i = 0;
+    
+    printf("***SISTEMA DE ORDENACAO DE NOTAS*** ");
+    printf("\n   MATEMATICA: 0\n   PORTUGUES : 1\n   INGLES    : 2\n   FISICA    : 3\n   HISTORIA  : 4");
+    
+    for(i = 0; i < quantidadeDeMaterias; i++) {
+        printf("\nDigite a nota da matéria de acordo com as numerações citadas anteriormente %d: ", i);
+        scanf("%f", &notasDasMaterias[i]);
+        somaDasNotas += notasDasMaterias[i];
+    }
+    
+    mediaDasNotas = somaDasNotas / 5;
+    
+    if(mediaDasNotas >= 7) {
+        printf("\nSua média foi: %.2f \nVOCE FOI APROVADO!!!", mediaDasNotas);
+    } else {
+        printf("\nSua média foi: %.2f \nVOCE FOI REPROVADO!!!", mediaDasNotas);
+    }
+    
+    return 0;
+}
