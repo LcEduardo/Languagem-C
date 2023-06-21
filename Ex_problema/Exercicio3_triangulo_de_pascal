@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int fatorial(int n){
+	if(n==0)
+		return 1; 
+		return n * fatorial(n-1);
+}
+
+int main(){
+	int numeroInteiro;
+	int resultadoBinominal;
+	printf("Digite um numero inteiro positivo: ");
+	scanf("%d", &numeroInteiro);
+	//resultado = fatorial(numeroInteiro);
+	int numerador;
+	int denominador;
+	for(numerador = 0; numerador <= numeroInteiro; numerador++){
+		resultadoBinominal = fatorial(numerador) / (fatorial(numerador)*(fatorial(numerador-numerador)));
+		printf("\n%d", resultadoBinominal);
+		resultadoBinominal = 0;
+		for(denominador = 1; denominador <= numerador; denominador++){
+			resultadoBinominal = fatorial(numerador) / (fatorial(denominador)*(fatorial(numerador-denominador)));
+			printf("\t%d",resultadoBinominal);
+			resultadoBinominal = 0;	
+			}
+	}	
+}
