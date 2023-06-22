@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(){
+	srand(time(NULL));
+	
+		int numeroAleatorio = rand()%101;
+		int tentativa;
+		
+	printf("Digite um numero: ");
+	scanf("%d", &tentativa);
+		
+	while(tentativa != numeroAleatorio){
+			if(tentativa > numeroAleatorio){
+				printf("\nOPs: Esse numero e maior.");
+			}else if(tentativa < numeroAleatorio){
+				printf("\nOPs: Esse numero e menor.");
+			}
+		tentativa = 0;
+		printf("Digite um numero: ");
+	 	scanf("%d", &tentativa);
+		}
+		
+		printf("\nPARABENS!!! \nVOCE ACERTOU!");
+		
+		printf("\n numero %d", numeroAleatorio);
+}
