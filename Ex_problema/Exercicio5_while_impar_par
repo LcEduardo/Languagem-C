@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int digiteUmNumeroInteiroPositivo;
+    
+    printf("Digite um número inteiro positivo: ");
+    scanf("%d", &digiteUmNumeroInteiroPositivo);
+    
+    if (digiteUmNumeroInteiroPositivo > 0) {
+        int numeroPosRegra = 0;
+        int regraImpar = 0;
+        int quantidadeDeAplicacao = 0;
+        
+        while (digiteUmNumeroInteiroPositivo > 1) {
+            if (digiteUmNumeroInteiroPositivo % 2 == 0) {
+                numeroPosRegra = digiteUmNumeroInteiroPositivo / 2;
+            } else {
+                regraImpar = digiteUmNumeroInteiroPositivo * 3 + 1;
+                digiteUmNumeroInteiroPositivo = regraImpar;
+            }
+            
+            quantidadeDeAplicacao++;
+        }
+        
+        printf("\nA quantidade de aplicação da regra foi %d", quantidadeDeAplicacao);
+    } else {
+        printf("\nOps! Esse número é menor do que 1.\nTENTE NOVAMENTE!");
+    }
+    
+    return 0;
+}
