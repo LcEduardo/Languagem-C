@@ -34,4 +34,5 @@ int main(){
 	}
 	
 	printf("\n%dh:%dm:%ds", hora, minutos, resto_da_conta_em_minutos);
+    
 }
