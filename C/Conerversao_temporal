@@ -1,0 +1,37 @@
+//Quando o usuário digitar a quantidade em segundos o programa deve mostrar não só os segundos mas as horas e minutos consecutivamente;
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main(){
+	
+	setlocale(LC_ALL,"Portuguese");
+	
+	int quantidade_segundos; 
+	
+	printf("***CONVERSÃO TEMPORAL***");
+	printf("\nDigite seu tempo em segundo: ");
+	scanf("%d", &quantidade_segundos);
+	
+	int hora = 0;
+	int resto_da_conta_em_horas = 0;
+	int resto_da_conta_em_minutos = 0;
+	int minutos = 0;
+	
+	if(quantidade_segundos / 3600 > 0){
+		hora = quantidade_segundos / 3600;
+		
+		resto_da_conta_em_horas  = quantidade_segundos % 3600;
+		
+		minutos = resto_da_conta_em_horas / 60;
+		
+		resto_da_conta_em_minutos = resto_da_conta_em_horas % 60;
+		
+	}else{
+		minutos = quantidade_segundos / 60;
+		resto_da_conta_em_minutos = quantidade_segundos % 60;
+	}
+	
+	printf("\n%dh:%dm:%ds", hora, minutos, resto_da_conta_em_minutos);
+}
