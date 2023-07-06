@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+	
+	setlocale(LC_ALL,"Portuguese");
+	
+	printf("SEQUÊNCIA DE FIBONACCI\n");
+	
+	int limite_sequencia;
+	
+	printf("Estabeleça o limite de termos da sequência: \n");
+	scanf("%d", &limite_sequencia);
+	
+	int termo [limite_sequencia];
+	int i;
+	
+
+	for(i = 0; i < limite_sequencia; i++){
+		
+		if(i <= 1){
+			
+		termo[i] = i;
+			
+		printf("%d\n", termo[i]);
+	
+		}else{
+		
+		termo[i] = termo[i-1] + termo[i-2];
+		
+		printf("%d\n", termo[i]);
+	}	
+  }
+}
