@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <locale.h>
+
+float preco_final(float fabrica, float gan_distribuidor, float mais_imposto ){
+	float valor_final = fabrica + gan_distribuidor + mais_imposto;
+	
+	return valor_final; 
+}
+
+float distribuidor(float p_fabrica, float percento_distribuidor){
+	float lucro = p_fabrica * (percento_distribuidor / 100);
+	
+	return lucro;
+}
+
+float imposto (float preco_fabrica, float imposto){
+	float imposto_aplicado = preco_fabrica * (imposto / 100);
+	
+	return imposto_aplicado;
+}
+
+int main(){
+	
+	setlocale(LC_ALL, "Portuguese");
+	
+	float preco_de_fabrica;
+	float acrecimo_impostos;
+	float lucro_distribuidor;
+	
+	printf("Qual é o preço de fabrica do veiculo: \n");
+	scanf("%f", &preco_de_fabrica);
+	printf("Qual é o acréscimo de imposto ao preço de fabrica: \n");
+	scanf("%f", &acrecimo_impostos);
+	printf("Qual o lucro do distribuidor: \n");
+	scanf("%f", &lucro_distribuidor);
+	
+	float valor_imposto;
+	
+	valor_imposto = imposto (preco_de_fabrica, acrecimo_impostos);
+	
+	float ganho_distribuidor; 
+	
+	ganho_distribuidor = distribuidor (preco_de_fabrica, lucro_distribuidor);  
+	
+	float total_a_pagar;
+	
+	total_a_pagar = preco_final (preco_de_fabrica, ganho_distribuidor, valor_imposto);
+	
+	printf("\nValor dos impostos cobrados: \nR$%.2f\n", valor_imposto);
+	printf("Ganho do distribuidor: \nR$%.2f\n", ganho_distribuidor);
+	printf("O valor final a ser pago é: \nR$%.2f\n", total_a_pagar);
+	
+	return 0;
+}
