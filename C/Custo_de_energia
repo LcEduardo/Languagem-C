@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <locale.h>
+
+float custo_de_cada_kw(float salario_minimo) {
+    float milesimo_de_kw = salario_minimo / 1000;
+    return milesimo_de_kw;
+}
+
+float valor_final(float custo_do_kw_em_reais, float quant_quilowats) {
+    float valor_do_consumo = custo_do_kw_em_reais * quant_quilowats;
+    return valor_do_consumo;
+}
+
+float com_desconto(float valor_pago) {
+    float valor_do_desconto = valor_pago * 0.18;
+    float valor_a_ser_pago_com_desconto = valor_pago - valor_do_desconto;
+    return valor_a_ser_pago_com_desconto;
+}
+
+int main() {
+    setlocale(LC_ALL, "Portuguese");
+
+    float salario_minimo;
+    float quant_quilowats;
+
+    printf("Digite o valor do salário mínimo: \n");
+    scanf("%f", &salario_minimo);
+    printf("Digite a quantidade de quilowatts (Kw) consumida pela residência: \n");
+    scanf("%f", &quant_quilowats);
+
+    float valor_em_reais_de_kw = 0;
+    valor_em_reais_de_kw = custo_de_cada_kw(salario_minimo);
+
+    printf("O valor em reais do kw é: R$%.2f \n", valor_em_reais_de_kw);
+
+    float valor_pago_pela_residencia = 0;
+    valor_pago_pela_residencia = valor_final(valor_em_reais_de_kw, quant_quilowats);
+
+    printf("O valor a ser pago pela residência é: R$%.2f \n", valor_pago_pela_residencia);
+
+    float valor_pago_com_desconto;
+    valor_pago_com_desconto = com_desconto(valor_pago_pela_residencia);
+
+    printf("Valor da conta de energia com desconto é: R$%.2f", valor_pago_com_desconto);
+
+    return 0;
+}
