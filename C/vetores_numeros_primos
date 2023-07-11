@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <locale.h>
+
+void numero_primo(int num[], int n){
+	int j;
+	
+	for(j = 0; j < n; j++){
+		if((num[j] == 2) || (num[j] == 3) || (num[j] == 5) || (num[j] == 7)) {
+			printf("\nE um numero PRIMO!: %d", num[j]);
+		}else if ((num[j] % 2 == 0) || (num[j] % 3 == 0) || (num[j] % 5 == 0) || (num[j] % 7 == 0)){
+		
+		}else if(num[j] < 2){
+			
+		}else{
+			printf("\nNUMERO PRIMO: %d", num[j]);
+		}
+		
+  	}
+
+}
+
+int main(){
+	
+	setlocale(LC_ALL,"Portuguese");
+	
+	int primos [8];
+	int i;
+	
+	for(i = 0; i < 8; i++){
+		printf("Digite um numero inteiro: \n");
+		scanf("%d", &primos[i]);	
+	}
+	
+	numero_primo(primos, 8);
+	
+	return 0;
+}
