@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+	
+	setlocale(LC_ALL, "Portuguese");
+	
+	int matriz [3][3];
+	int linha; 
+	int coluna; 
+	
+	for(linha = 0; linha < 3; linha++){
+		for(coluna = 0; coluna < 3; coluna++){
+			printf("Digite um número inteiro para preencher a posição %d %d: \n", linha, coluna);
+			scanf("%d", &matriz[linha][coluna]);
+		}
+	}
+	
+	system("cls");
+	
+	int i;
+	int j;
+	int numero; 
+	
+	printf("\nDigite um número inteiro: \n");
+	scanf("%d", &numero);
+	
+	for(i = 0; i < 3; i++){
+		
+		for(j = 0; j < 3; j++){
+			
+		 if(numero == matriz[i][j]){
+			printf("ACERTOU UHULL!!: o número %d está na posição (%d,%d)", numero, i, j);
+			return 0;
+		}
+	  }
+	}
+	
+			printf("Esse número não se encontra nessa matriz.");
+			
+			return 0;
+	
+}
