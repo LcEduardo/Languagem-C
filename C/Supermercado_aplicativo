@@ -1,0 +1,98 @@
+#include <stdio.h>
+#include <string.h>
+
+struct produtos {
+    char nome_produto[30];
+    int codigo;
+    int quantidade;
+    float valor;
+};
+
+int main() {
+    struct produtos itens[100]; 
+
+    int quantidade_de_itens = 0;
+    int i;
+
+    printf("Quantos itens serão adicionados?\n");
+    scanf("%d", &quantidade_de_itens);
+
+    for ( i = 0; i < quantidade_de_itens; i++) {
+        printf("Digite o nome do produto %d:\n", i+1);
+        scanf("%29s", itens[i].nome_produto);
+        printf("Digite o código do produto (%s): ", itens[i].nome_produto);
+        scanf("%d", &itens[i].codigo);
+        printf("Digite a quantidade desse produto (%s) no estoque: ", itens[i].nome_produto);
+        scanf("%d", &itens[i].quantidade);
+        printf("Digite o valor desse produto (%s): ", itens[i].nome_produto);
+        scanf("%f", &itens[i].valor);
+        printf("\n");
+    }
+
+    char variar_estoque[4];
+    int comparacao_de_codigo;
+    float mudanca_quantidade;
+    char continuar_alteracao[5];
+
+    printf("Deseja variar o estoque (sim para continuar):\n");
+    scanf("%3s", variar_estoque);
+
+    if (strcmp(variar_estoque, "sim") == 0) {
+        do {
+            printf("Digite o código do item que deseja alterar:\n");
+            scanf("%d", &comparacao_de_codigo);
+
+            int encontrado = 0; 
+		
+            for (i = 0; i < quantidade_de_itens; i++) {
+                if (comparacao_de_codigo == itens[i].codigo) {
+                    printf("Digite o valor para alteração:\n");
+                    scanf("%f", &mudanca_quantidade);
+                    itens[i].quantidade += mudanca_quantidade;
+                    printf("O produto com o código %d agora possui a quantidade %d no estoque.\n", itens[i].codigo, itens[i].quantidade);
+                    encontrado = 1; 
+                    break;
+                }
+            }
+
+            if (!encontrado) {
+                printf("ERRO! Número de código não encontrado.\n");
+            }
+
+            printf("Deseja alterar mais alguma coisa? (digite sim para continuar a alteração)\n");
+            scanf("%4s", continuar_alteracao);
+        } while (strcmp(continuar_alteracao, "sim") == 0);
+    }
+
+    int codigo_de_compra;
+    int quantidade_de_compra;
+
+    printf("\nDigite o código do produto que deseja efetuar a compra:\n");
+    scanf("%d", &codigo_de_compra);
+
+    int encontrado = 0; 
+
+    for ( i = 0; i < quantidade_de_itens; i++) {
+        if (codigo_de_compra == itens[i].codigo) {
+            printf("Digite a quantidade do produto a ser comprado:\n");
+            scanf("%d", &quantidade_de_compra);
+
+            if (quantidade_de_compra <= itens[i].quantidade) {
+                float valor_pago = itens[i].valor * quantidade_de_compra;
+                printf("O valor pago no produto é: R$%.2f\n", valor_pago);
+            } else {
+                printf("Não possui essa quantidade no estoque!\n");
+            }
+
+            encontrado = 1; 
+            break;
+        }
+    }
+
+    if (!encontrado) {
+        printf("ERRO! Número de código não encontrado.\n");
+    }
+
+    return 0;
+}
+
